@@ -43,16 +43,6 @@ a {
     white-space: normal !important;
 }
 
-/* CTA Button */
-.stButton > button {
-    background-color: #0b1f3a !important;
-    color: white !important;
-    padding: 10px 22px !important;
-    border-radius: 8px !important;
-    border: 2px solid #0b1f3a !important;
-    font-weight: 700 !important;
-}
-
 .stButton > button:hover {
     background-color: #133567 !important;
     border-color: #133567 !important;
@@ -114,12 +104,6 @@ if choice == 'Home':
 - Buka halaman **Machine Learning** untuk prediksi harga  
 - **Link Google Colab** : https://tinyurl.com/pricestimator  
 """)
-    st.markdown("</div>", unsafe_allow_html=True)
-
-    # CTA BUTTON
-    st.markdown("<div style='text-align:center;'>", unsafe_allow_html=True)
-    if st.button("Open Machine Learning Page"):
-        run_pricestimator_app()
     st.markdown("</div>", unsafe_allow_html=True)
 
     # Dataset & Project
