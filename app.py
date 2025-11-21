@@ -43,11 +43,6 @@ a {
     white-space: normal !important;
 }
 
-.stButton > button:hover {
-    background-color: #133567 !important;
-    border-color: #133567 !important;
-}
-
 /* Logo alignment */
 .logo-container {
     display: flex;
