@@ -134,7 +134,6 @@ if choice == 'Home':
             )
 
     st.markdown("---")
-    st.caption("Tips: tambahkan screenshot hasil model, sample predictions, dan penjelasan proses modelling di laporan atau presentasi.")
 
 
 # Machine Learning
