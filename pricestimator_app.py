@@ -4,9 +4,7 @@ import joblib
 
 def run_pricestimator_app():
 
-    # ======================================
-    # SAFE CSS
-    # ======================================
+    # Custom style CSS
     st.markdown("""
     <style>
 
@@ -50,9 +48,7 @@ def run_pricestimator_app():
     """, unsafe_allow_html=True)
 
 
-    # ======================================
-    # HEADER
-    # ======================================
+    # Header
     st.markdown("<h1>AutoValue — Used Car Price Estimator</h1>", unsafe_allow_html=True)
     st.markdown(
         "<p>Masukkan spesifikasi mobil Anda, dan sistem akan memprediksi "
@@ -60,9 +56,7 @@ def run_pricestimator_app():
         unsafe_allow_html=True,
     )
 
-    # ======================================
-    # FORM INPUT
-    # ======================================
+    # Form input
     def cream_card(title, widget_func):
         st.markdown(f"<div class='cream-box'><b>{title}</b>", unsafe_allow_html=True)
         value = widget_func()
@@ -124,9 +118,7 @@ def run_pricestimator_app():
         lambda: st.selectbox("", ["Yes", "No"])
     )
 
-    # ======================================
-    # MAKE DATAFRAME
-    # ======================================
+    # Dataframe
     input_df = pd.DataFrame([{
         "make_year": make_year,
         "mileage_kmpl": mileage,
@@ -141,9 +133,7 @@ def run_pricestimator_app():
         "insurance_valid": insurance_valid
     }])
 
-    # ======================================
-    # PREDICT
-    # ======================================
+    # Predict
     st.markdown("<h2>📊 Prediction Result</h2>", unsafe_allow_html=True)
 
     pipeline = joblib.load("model_pipeline.pkl")
