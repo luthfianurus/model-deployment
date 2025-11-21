@@ -3,14 +3,10 @@ import streamlit.components.v1 as stc
 from pricestimator_app import run_pricestimator_app
 import os
 
-# ============================
-# PAGE CONFIG
-# ============================
+# Page config
 st.set_page_config(page_title="AutoValue", layout="wide")
 
-# ============================
-# GLOBAL CSS (CLEAN FINAL VERSION)
-# ============================
+# custom style CSS
 st.markdown("""
 <style>
 
@@ -72,34 +68,24 @@ a {
 </style>
 """, unsafe_allow_html=True)
 
-# ============================
-# SIDEBAR MENU
-# ============================
+# Side bar menu
 menu = ['Home', 'Machine Learning']
 choice = st.sidebar.selectbox("Menu", menu)
 
-# ============================
-# LOGO HANDLING
-# ============================
-# === Path lokal ===
-local_logo_path = r"D:\\\Kuliah\\Bootcamp\\Predict.png"
-
-# === URL GitHub raw (ganti username & repo-mu) ===
+# Logo
+local_logo_path = "Predict.png"   # file di repo GitHub
 github_logo_url = "https://raw.githubusercontent.com/luthfianurus/model-deployment/main/Predict.png"
 
-# === otomatis: lokal dulu, kalau tidak ada pakai GitHub ===
 if os.path.exists(local_logo_path):
-    logo_img = github_logo_url
-else:
     logo_img = local_logo_path
+else:
+    logo_img = github_logo_url
 
 
-# ============================
-# HOME PAGE
-# ============================
+# Home page
 if choice == 'Home':
 
-    # ===== HEADER (Logo + Title) =====
+    # Header (logo +title)
     col1, col2 = st.columns([1, 4])
     with col1:
         if logo_img:
@@ -111,7 +97,7 @@ if choice == 'Home':
             "**harga mobil bekas (USD)** menggunakan Machine Learning."
         )
 
-    # ===== INTRO CARD =====
+    # Intro card
     st.markdown("<div class='intro-card'>", unsafe_allow_html=True)
     st.markdown("""
 ### What This App Does
@@ -121,7 +107,7 @@ if choice == 'Home':
     """)
     st.markdown("</div>", unsafe_allow_html=True)
 
-    # ===== QUICK ACTION BOX =====
+    # Quick action
     st.markdown("<div class='cream-box'>", unsafe_allow_html=True)
     st.markdown("## Quick Actions")
     st.markdown("""
@@ -136,7 +122,7 @@ if choice == 'Home':
         run_pricestimator_app()
     st.markdown("</div>", unsafe_allow_html=True)
 
-    # ===== DATASET & PROJECT - Two columns =====
+    # Dataset & Project
     st.markdown("## Dataset & Project")
     col_left, col_right = st.columns([1, 1], gap="large")
 
@@ -172,8 +158,6 @@ if choice == 'Home':
     st.caption("Tips: tambahkan screenshot hasil model, sample predictions, dan penjelasan proses modelling di laporan atau presentasi.")
 
 
-# ============================
-# MACHINE LEARNING PAGE
-# ============================
+# Machine Learning
 elif choice == "Machine Learning":
     run_pricestimator_app()
