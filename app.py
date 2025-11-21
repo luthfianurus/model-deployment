@@ -89,9 +89,9 @@ github_logo_url = "https://raw.githubusercontent.com/luthfianurus/model-deployme
 
 # === otomatis: lokal dulu, kalau tidak ada pakai GitHub ===
 if os.path.exists(local_logo_path):
-    logo_img = local_logo_path
-else:
     logo_img = github_logo_url
+else:
+    logo_img = local_logo_path
 
 
 # ============================
