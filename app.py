@@ -81,12 +81,17 @@ choice = st.sidebar.selectbox("Menu", menu)
 # ============================
 # LOGO HANDLING
 # ============================
-logo_path = r"D:\Kuliah\Bootcamp\Predict.png"
+# === Path lokal ===
+local_logo_path = r"D:\\\Kuliah\\Bootcamp\\Predict.png"
 
-if os.path.exists(logo_path):
-    logo_img = logo_path
+# === URL GitHub raw (ganti username & repo-mu) ===
+github_logo_url = "https://raw.githubusercontent.com/luthfianurus/model-deployment/main/Predict.png"
+
+# === otomatis: lokal dulu, kalau tidak ada pakai GitHub ===
+if os.path.exists(local_logo_path):
+    logo_img = local_logo_path
 else:
-    logo_img = None
+    logo_img = github_logo_url
 
 
 # ============================
@@ -95,7 +100,7 @@ else:
 if choice == 'Home':
 
     # ===== HEADER (Logo + Title) =====
-    col1, col2 = st.columns([1, 5])
+    col1, col2 = st.columns([1, 4])
     with col1:
         if logo_img:
             st.image(logo_img, width=120)
@@ -172,7 +177,3 @@ if choice == 'Home':
 # ============================
 elif choice == "Machine Learning":
     run_pricestimator_app()
-
-
-
-
